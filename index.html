@@ -63,14 +63,67 @@
         </button>
 
         <ul class="header__nav-list">
-          <li class="header__nav-item"><a href="#" class="header__nav-link">home</a></li>
-          <li class="header__nav-item"><a href="#" class="header__nav-link">shop</a></li>
-          <li class="header__nav-item"><a href="#" class="header__nav-link">about</a></li>
-          <li class="header__nav-item"><a href="#" class="header__nav-link">contact</a></li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">home</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">shop</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">about</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">contact</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <main class="main"></main>
+    <main class="main">
+      <section class="hero">
+        <div class="hero__gallery">
+          <div class="hero__img-container hero__img-container__active">
+            <picture>
+              <source
+                srcset="./images/desktop-image-hero-1.jpg"
+                media="(min-width: 48rem)"
+              />
+              <img
+                src="./images/mobile-image-hero-1.jpg"
+                alt="A bonsai tree on a table between two white chairs."
+                class="hero__img"
+              />
+            </picture>
+          </div>
+
+          <div class="hero__img-container">
+            <picture>
+              <source
+                srcset="./images/desktop-image-hero-2.jpg"
+                media="(min-width: 48rem)"
+              />
+              <img
+                src="./images/mobile-image-hero-2.jpg"
+                alt="Three chairs of different colors arranged with one in the front and two in the back."
+                class="hero__img"
+              />
+            </picture>
+          </div>
+
+          <div class="hero__img-container">
+            <picture>
+              <source
+                srcset="./images/desktop-image-hero-3.jpg"
+                media="(min-width: 48rem)"
+              />
+              <img
+                src="./images/mobile-image-hero-3.jpg"
+                alt="A black folding chair."
+                class="hero__img"
+              />
+            </picture>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
