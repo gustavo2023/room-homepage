@@ -1,0 +1,8 @@
+@forward "variables";
+@use "variables" as *;
+
+@mixin for-desktop-up {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}

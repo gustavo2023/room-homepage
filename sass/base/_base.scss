@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+body {
+  font-family: $ff-league-spartan;
+  font-size: $fs-base;
+  background-color: $clr-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
