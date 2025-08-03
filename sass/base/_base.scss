@@ -11,3 +11,9 @@ body {
   align-items: center;
   height: fit-content;
 }
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
