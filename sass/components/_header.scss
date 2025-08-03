@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 1rem;
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $clr-black;
+    font-weight: $fw-bold;
+
+    @include for-desktop-up {
+      color: $clr-white;
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 10px;
+      }
+    }
+  }
+}
