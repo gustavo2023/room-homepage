@@ -13,10 +13,26 @@
   width: 100%;
   z-index: 100;
 
+  @include for-desktop-up {
+    justify-content: flex-start;
+    padding: 3rem 4rem;
+  }
+
   &__menu-toggle {
     position: absolute;
     left: 1rem;
     z-index: 101;
+
+    @include for-desktop-up {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $clr-white;
   }
 
   &__nav-list {

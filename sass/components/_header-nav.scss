@@ -1,9 +1,0 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
-
-.header__nav {
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  background-color: $clr-white;
-}
