@@ -15,6 +15,7 @@
 
   @include for-desktop-up {
     justify-content: flex-start;
+    gap: 4rem;
     padding: 3rem 4rem;
   }
 
@@ -28,17 +29,37 @@
     }
   }
 
+  &__logo {
+    object-fit: contain;
+  }
+
   &__nav {
     display: none;
     justify-content: space-between;
     align-items: center;
     background-color: $clr-white;
+
+    @include for-desktop-up {
+      display: flex;
+      width: 85%;
+      background-color: transparent;
+    }
+  }
+
+  &__menu-close {
+    @include for-desktop-up {
+      display: none;
+    }
   }
 
   &__nav-list {
     list-style: none;
     display: flex;
     gap: 1rem;
+
+    @include for-desktop-up {
+      gap: 2rem;
+    }
   }
 
   &__nav-link {
