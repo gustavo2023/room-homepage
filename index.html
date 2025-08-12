@@ -87,7 +87,7 @@
     <main class="main">
       <section class="hero">
         <div class="hero__gallery">
-          <div class="hero__img-container hero__img-container__active">
+          <div class="hero__img-container hero__img-container--active">
             <picture>
               <source
                 srcset="./images/desktop-image-hero-1.jpg"
@@ -130,6 +130,29 @@
           </div>
         </div>
 
+        <div class="hero__nav-btns">
+          <button class="hero__nav-btn hero__nav-btn--prev">
+            <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13 0L1 12l12 12"
+                stroke="#FFF"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button class="hero__nav-btn hero__nav-btn--next">
+            <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 0l12 12L1 24"
+                stroke="#FFF"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+
         <div class="hero__content-wrapper">
           <article class="hero__content">
             <h1 class="hero__title">Discover innovative ways to decorate</h1>
@@ -141,38 +164,19 @@
             </p>
             <a href="#" class="hero__cta">
               <span class="hero__cta-text">Shop now</span>
-              <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                width="40"
+                height="12"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+              >
                 <path
                   d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
-                  fill="#000"
                   fill-rule="nonzero"
                 />
               </svg>
             </a>
           </article>
-
-          <div class="hero__nav-btns">
-            <button class="hero__nav-btn hero__nav-btn--prev">
-              <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M13 0L1 12l12 12"
-                  stroke="#FFF"
-                  fill="none"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </button>
-            <button class="hero__nav-btn hero__nav-btn--next">
-              <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M1 0l12 12L1 24"
-                  stroke="#FFF"
-                  fill="none"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
       </section>
 
