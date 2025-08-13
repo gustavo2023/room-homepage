@@ -24,14 +24,20 @@
   &__gallery {
     grid-area: gallery;
     position: relative;
+    display: grid;
   }
 
   &__img-container {
-    display: none;
-    width: 100%;
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;      
+    transition: opacity 0.5s ease-in-out;
 
     &--active {
-      display: block;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
   }
 
@@ -101,6 +107,21 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  &__content.is-fading {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__img-container {
+      transition: none;
+    }
+    &__content {
+      transition: none;
+    }
   }
 
   &__title {

@@ -10,6 +10,7 @@ const descEl = document.querySelector(".hero__description");
 const prevBtn = document.querySelector(".hero__nav-btn--prev");
 const nextBtn = document.querySelector(".hero__nav-btn--next");
 const statusEl = document.getElementById("hero-status");
+const contentEl = document.querySelector(".hero__content");
 
 // Navbar functionality
 const focusableElements = navbar.querySelectorAll(
@@ -88,14 +89,35 @@ const updateGallery = (index) => {
 
 const showSlide = (index) => {
   const newIndex = (index + slides.length) % slides.length; // wrap
+
   slides[currentSlide].classList.remove("hero__img-container--active");
   slides[newIndex].classList.add("hero__img-container--active");
-  currentSlide = newIndex;
-  setSlideA11y(currentSlide);
-  updateGallery(currentSlide);
+
+  // Fade out text, swap content, fade in
+  const apply = () => {
+    currentSlide = newIndex;
+    setSlideA11y(currentSlide);
+    updateGallery(currentSlide);
+    // fade-in on next frame
+    requestAnimationFrame(() => contentEl?.classList.remove("is-fading"));
+  };
+
+  if (contentEl) {
+    contentEl.classList.add("is-fading");
+    contentEl.addEventListener(
+      "transitionend",
+      function onEnd(e) {
+        if (e.target !== contentEl) return;
+        contentEl.removeEventListener("transitionend", onEnd);
+        apply();
+      },
+      { once: true }
+    );
+  } else {
+    apply();
+  }
 };
 
-// Init a11y + content from current DOM
 setSlideA11y(currentSlide);
 updateGallery(currentSlide);
 
