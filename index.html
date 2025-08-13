@@ -86,8 +86,18 @@
 
     <main class="main">
       <section class="hero">
-        <div class="hero__gallery">
-          <div class="hero__img-container hero__img-container--active">
+        <div
+          class="hero__gallery"
+          id="hero-gallery"
+          role="region"
+          aria-label="Hero gallery"
+        >
+          <div
+            class="hero__img-container hero__img-container--active"
+            data-title="Discover innovative ways to decorate"
+            data-description="We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love."
+            aria-hidden="false"
+          >
             <picture>
               <source
                 srcset="./images/desktop-image-hero-1.jpg"
@@ -101,7 +111,12 @@
             </picture>
           </div>
 
-          <div class="hero__img-container">
+          <div
+            class="hero__img-container"
+            data-title="We are available all across the globe"
+            data-description="With stores all over the world, it’s easy for you to find furniture for your home or place of business. Locally, we’re in most major cities across the country. Find the branch nearest you using our store locator. Any questions? Don’t hesitate to contact us today."
+            aria-hidden="true"
+          >
             <picture>
               <source
                 srcset="./images/desktop-image-hero-2.jpg"
@@ -115,7 +130,12 @@
             </picture>
           </div>
 
-          <div class="hero__img-container">
+          <div
+            class="hero__img-container"
+            data-title="Manufactured with the best materials"
+            data-description="Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office."
+            aria-hidden="true"
+          >
             <picture>
               <source
                 srcset="./images/desktop-image-hero-3.jpg"
@@ -177,6 +197,7 @@
                 />
               </svg>
             </a>
+            <span id="hero-status" class="sr-only" aria-live="polite"></span>
           </article>
         </div>
       </section>
