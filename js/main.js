@@ -1,8 +1,17 @@
+// DOM Elements
 const menuToggle = document.querySelector(".header__menu-toggle");
 const navbar = document.querySelector(".header__nav");
 const closeButton = document.querySelector(".header__menu-close");
 const overlay = document.querySelector(".header__overlay");
+const gallery = document.querySelector("#hero-gallery");
+const slides = Array.from(document.querySelectorAll(".hero__img-container"));
+const titleEl = document.querySelector(".hero__title");
+const descEl = document.querySelector(".hero__description");
+const prevBtn = document.querySelector(".hero__nav-btn--prev");
+const nextBtn = document.querySelector(".hero__nav-btn--next");
+const statusEl = document.getElementById("hero-status");
 
+// Navbar functionality
 const focusableElements = navbar.querySelectorAll(
   'a[href], button, [tabindex]:not([tabindex="-1"])'
 );
@@ -51,7 +60,55 @@ const handleKeydown = (event) => {
   }
 };
 
+// Gallery functionality
+const announce = (index) => {
+  if (!statusEl) return;
+  const { title = "" } = slides[index].dataset;
+  statusEl.textContent = `Slide ${index + 1} of ${slides.length}: ${title}`;
+};
+
+const setSlideA11y = (activeIndex) => {
+  slides.forEach((slide, i) => {
+    slide.setAttribute("aria-hidden", i === activeIndex ? "false" : "true");
+  });
+};
+
+// Use DOM state if a slide is already active; fallback to 0
+let currentSlide = slides.findIndex((s) =>
+  s.classList.contains("hero__img-container--active")
+);
+if (currentSlide < 0) currentSlide = 0;
+
+const updateGallery = (index) => {
+  const { title = "", description = "" } = slides[index].dataset;
+  titleEl.textContent = title;
+  descEl.textContent = description;
+  announce(index);
+};
+
+const showSlide = (index) => {
+  const newIndex = (index + slides.length) % slides.length; // wrap
+  slides[currentSlide].classList.remove("hero__img-container--active");
+  slides[newIndex].classList.add("hero__img-container--active");
+  currentSlide = newIndex;
+  setSlideA11y(currentSlide);
+  updateGallery(currentSlide);
+};
+
+// Init a11y + content from current DOM
+setSlideA11y(currentSlide);
+updateGallery(currentSlide);
+
+// Event listeners
 menuToggle.addEventListener("click", openNavbar);
 closeButton.addEventListener("click", closeNavbar);
 document.addEventListener("click", handleClickOutside);
 document.addEventListener("keydown", handleKeydown);
+
+prevBtn.addEventListener("click", () => {
+  showSlide(currentSlide - 1);
+});
+
+nextBtn.addEventListener("click", () => {
+  showSlide(currentSlide + 1);
+});
