@@ -3,7 +3,6 @@ const menuToggle = document.querySelector(".header__menu-toggle");
 const navbar = document.querySelector(".header__nav");
 const closeButton = document.querySelector(".header__menu-close");
 const overlay = document.querySelector(".header__overlay");
-const gallery = document.querySelector("#hero-gallery");
 const slides = Array.from(document.querySelectorAll(".hero__img-container"));
 const titleEl = document.querySelector(".hero__title");
 const descEl = document.querySelector(".hero__description");
